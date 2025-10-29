@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascripts Accordion</title>
+        <style>
+            .accordion{
+                font-family: Arial, Helvetica, sans-serif;
+                width:450px;
+                    
+            }
+
+            .accordion-item{
+                margin-bottom: 10px;
+            }
+
+            .accordion-title{
+                color:white;
+                background-color: blue;
+                padding: 10px;
+                transition: background-color 1s;
+            }
+            .accordion-title:hover{
+                cursor: pointer;
+                background-color: darkblue;
+            }
+
+            .accordion-content{
+                background-color: lightgray;
+                padding: 10px;
+                display: none;
+                
+            }
+            .accordion-item.active .accordion-content{
+                display: block;
+            } 
+        </style>
+    </head>
+    <body>
+        <h1>Javascripts Accordion</h1>
+        <div class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-title">United Nayabazar</div>
+                <div class="accordion-content">Football Club in MaiJogmai-1 Nayabazar</div>
+            </div>
+    
+            <div class="accordion-item">
+                <div class="accordion-title">Chairman</div>
+                <div class="accordion-content">Pratik Gurung</div>
+            </div>
+      
+            <div class="accordion-item">
+                <div class="accordion-title">Estd: 2078 BS</div>
+                <div class="accordion-content">Football Club in MaiJogmai-1 Nayabazar</div>
+            </div>
+       
+            <div class="accordion-item">
+                <div class="accordion-title">Secretary</div>
+                <div class="accordion-content">Rozan Tamang</div>
+            </div>
+        </div>
+
+        <script>
+            const accordionItems = document.querySelectorAll(".accordion-item");
+
+            accordionItems.forEach(item => {
+                const title = item.querySelector('.accordion-title');
+                const content = item.querySelector('.accordion-content');
+                title.addEventListener('click', () => {
+                   for(var i =0; i < accordionItems.length; i++){
+                    if(accordionItems[i] !== item){
+                        accordionItems[i].classList.remove('active');
+                    }else{
+                        item.classList.toggle('active');
+                    }
+                }  
+
+                });
+            })
+        </script>
+    </body>
+</html>
