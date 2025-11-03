@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<head>
+    <title>Hamburger Menu</title>
+    <style>
+        .off-screen-menu{
+            position: fixed;
+            top:0;
+            right:-450px;
+            width: 100%;
+            max-width: 450px;
+            height: 100vh;
+            background-color: #333;
+            color: white;
+            transition:  0.3s ease;
+            padding-top: 60px;
+            font-size:3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;    
+            text-align: center;
+        }
+
+        .off-screen-menu.active{
+            right:0;
+        }
+         nav{
+            padding: 1rem;
+            display:flex;
+            background-color: #333;
+
+         }
+
+         .ham-menu {
+             height:50px;
+                width:50px;
+                margin-left:auto;
+                position:relative;
+         }
+
+         .ham-menu span{
+            height:5px;
+            width:100%;
+            background-color:blue;
+            border-radius:25px;
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);   
+            transition:.3s ease    ;
+        }
+        .ham-menu span:nth-child(1){
+            top:25%;
+        }
+        .ham-menu span:nth-child(3){
+            top:75%;
+        }
+        .ham-menu.active span:nth-child(1){
+            top:50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        .ham-menu.active span:nth-child(2){
+            opacity:0;
+        }
+        .ham-menu.active span:nth-child(3){
+            top:50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="off-screen-menu">
+      <ul>
+        <li>Home</li>
+        <li>Contact</li>
+        <li>About</li>
+      </ul>
+    </div>
+    <nav>
+       <div class="ham-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+       </div>
+    </nav>
+</body>
+<script>
+    const hamMenu = document.querySelector('.ham-menu');
+    const offScreenMenu = document.querySelector('.off-screen-menu');
+
+    hamMenu.addEventListener('click', () => {
+        hamMenu.classList.toggle('active');
+        offScreenMenu.classList.toggle('active');
+    });
+</script>
