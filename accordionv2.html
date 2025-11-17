@@ -36,7 +36,7 @@ body{
     right:20px;
     font-size:20px;
 }
-.accordion .contentBox .active.label::before{
+.accordion .contentBox.active .label::before{
     content:'-';
 }
 
@@ -50,11 +50,11 @@ body{
     overflow-y: auto;
 }
 
-.accordion .contentBox .active .content{
+.accordion .contentBox.active .content{
     height:150px;
     padding:10px;   
 }
-        </style>
+    </style>
     </head>
     <body>
         <div class="accordion">
@@ -76,14 +76,23 @@ body{
             </div>
        </div>
     </body>
-    <script>
-        const accordion = document.getElementsByClassName('contentBox');
+<script>
+    const accordion = document.getElementsByClassName('contentBox');
 
-        for (let i = 0; i < accordion.length; i++) {
-            accordion[i].addEventListener('click', function() {
-                this.classList.toggle('active');
-            });
-        }
-    </script>
+    for (let i = 0; i < accordion.length; i++) {
+        accordion[i].addEventListener('click', function () {
+
+            // 1️⃣ Close all other accordion items
+            for (let j = 0; j < accordion.length; j++) {
+                if (j !== i) {
+                    accordion[j].classList.remove('active');
+                }
+            }
+
+            // 2️⃣ Toggle the clicked one
+            this.classList.toggle('active');
+        });
+    }
+</script>
     
 </html>
