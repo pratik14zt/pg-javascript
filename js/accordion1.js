@@ -1,16 +1,30 @@
- const accordion = document.getElementsByClassName('accordion-item');
+const accordionItems = document.querySelectorAll(".accordion-item");
 
-    for (let i = 0; i < accordion.length; i++) {
-        accordion[i].addEventListener('click', function () {
+accordionItems.forEach(item => {
+    const title = item.querySelector(".accordion-title");
+    const content = item.querySelector(".accordion-content");
+    const arrow = item.querySelector(".arrow");
 
-            // 1️⃣ Close all other accordion items
-            for (let j = 0; j < accordion.length; j++) {
-                if (j !== i) {
-                    accordion[j].classList.remove('active');
-                }
+    title.addEventListener("click", () => {
+
+        // Close other accordions
+        accordionItems.forEach(other => {
+            if (other !== item) {
+                other.classList.remove("active");
+                other.querySelector(".accordion-content").style.maxHeight = null;
+                other.querySelector(".arrow").style.transform = "rotate(0deg)";
             }
-
-            // 2️⃣ Toggle the clicked one
-            this.classList.toggle('active');
         });
-    }
+
+        // Toggle this one
+        item.classList.toggle("active");
+
+        if (item.classList.contains("active")) {
+            content.style.maxHeight = content.scrollHeight + "px";
+            arrow.style.transform = "rotate(180deg)";
+        } else {
+            content.style.maxHeight = null;
+            arrow.style.transform = "rotate(0deg)";
+        }
+    });
+});
