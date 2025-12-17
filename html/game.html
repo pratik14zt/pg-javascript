@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game to guess a right number</title>
+</head>
+<body>
+    <script>
+        let GuessNum = 25;
+        let userNum = prompt("guess a number between 1 to 100");
+        while (userNum != GuessNum) {
+           userNum = prompt("wrong guess, try again!");
+        }
+
+        alert("congratulations! you guessed the right number.");
+    </script>
+</body>
+</html>
