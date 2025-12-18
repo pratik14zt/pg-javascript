@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings</title>
+</head>
+<body>
+    <h1>Prompt the user to enter their fullname. Generate a username for them based on the input. Start username with @, followed by their full name and ending with the full name length.</h1>
+    <p>eg: username = "pratikgurung" , username should be "@pratikgurung10"</p>
+    <script>
+        let fullName = prompt("Enter your full name without spaces here:");
+        let username = "@" + fullName + fullName.length;
+        alert("Your username is: " + username);
+        console.log("Username generated: " + username);
+    </script>
+</body>
+</html>
