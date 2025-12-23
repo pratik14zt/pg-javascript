@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods</title>
+</head>
+<body>
+  <h2>Qs. Create an array to store companies -> "Blackmud", "Fourteen Zones" , "Cedar Gate" , "Leapfrog" </h2>  
+  <p>a. Remove the first company from the array
+    b.Remove leap frog & Add "Tech Innovations" in its place 
+    c. add Amazon at the end 
+  </p>
+  <script>
+    let companies = ["Blackmud", "Fourteen Zones" , "Cedar Gate" , "Leapfrog"];
+    companies.shift();
+    companies.splice(companies.indexOf("Leapfrog"), 1, "Tech Innovations");
+    companies.push("Amazon");
+    console.log(companies);
+
+  </script>
+</body>
+</html>
