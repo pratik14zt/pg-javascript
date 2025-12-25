@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reduce Array</title>
+</head>
+<body>
+    <h2>Take a number n as inout from user. Create an array of numbers from 1 to n.</h2>
+    <p>Use the reduce method to calculate sum of all numbbers in the array</p>
+    <p>Use the reduce methid to caklculate product of all numbers in the array</p>
+    <script>
+       let n = prompt ("enter the number : ");
+       let arr = [];
+       for (let i=1; i <= n ; i++){
+        arr[i-1] = i ; 
+       }
+       console.log (arr); 
+
+       let sum = arr.reduce((res,curr) => {
+           return res + curr ; 
+       });
+        console.log(sum); 
+
+        let fac = arr.reduce ((res,curr) => {
+            return res * curr ; 
+        });
+        console.log(fac);
+    </script>
+</body>
+</html>
