@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looping Over Array</title>
+</head>
+<body>
+  <h1>For a given array with prices of 5 items -> [250,645,300,900,50] 
+    All items have an offer of 10% OFF on them. Change the array to store final price adter applying offer.
+  </h1>
+  <script>
+ let prices = [250, 645, 300, 900, 50];
+ for (let i = 0; i< prices.length; i++) {
+    let offer = prices[i] / 10 ; // calculating 10% of the price
+    prices[i] = prices[i] - offer ; // updating the price after applying offer
+ }
+ console.log("Final prices after 10% OFF:", prices);
+</script>
+</body>
+</html>

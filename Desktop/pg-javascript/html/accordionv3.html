@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Accordion Using Javascripts</title>
+        <style>
+body{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    height:100vh;
+    background-color:#f0f0f0;
+}
+
+.accordion{
+    max-width:800px;
+}
+
+.accordion .contentBox{
+    position:relative;
+    margin: 10px 20px;
+
+}
+
+.accordion .contentBox .label{
+    position:relative;
+    padding:10px;
+    background-color:#3498db;
+    color:#fff;
+    cursor: pointer;
+}
+.accordion .contentBox .label::before{
+    content:'+';
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    right:20px;
+    font-size:20px;
+}
+.accordion .contentBox.active .label::before{
+    content:'-';
+}
+
+.accordion .contentBox .content{
+    position:relative;
+    height:0;
+    padding:10px;
+    background-color:#ecf0f1;
+    overflow:hidden;
+    transition: 0.5s;
+    overflow-y: auto;
+}
+
+.accordion .contentBox.active .content{
+    height:150px;
+    padding:10px;   
+}
+    </style>
+    </head>
+    <body>
+        <div class="accordion">
+            <div class="contentBox">
+                <div class="label">List one</div>
+                <div class="content"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat id minus voluptate odit consectetur totam eveniet, maxime quas sit eaque reiciendis adipisci consequatur alias vel corrupti sunt quod natus facere.</p></div>
+            </div>
+             <div class="contentBox">
+                <div class="label">List two</div>
+                <div class="content"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat id minus voluptate odit consectetur totam eveniet, maxime quas sit eaque reiciendis adipisci consequatur alias vel corrupti sunt quod natus facere.</p></div>
+            </div>
+             <div class="contentBox">
+                <div class="label">List three</div>
+                <div class="content"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat id minus voluptate odit consectetur totam eveniet, maxime quas sit eaque reiciendis adipisci consequatur alias vel corrupti sunt quod natus facere.</p></div>
+            </div>
+             <div class="contentBox">
+                <div class="label">List four</div>
+                <div class="content"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat id minus voluptate odit consectetur totam eveniet, maxime quas sit eaque reiciendis adipisci consequatur alias vel corrupti sunt quod natus facere.</p></div>
+            </div>
+       </div>
+    </body>
+<script>
+    const accordion = document.getElementsByClassName('contentBox');
+
+    for (let i = 0; i < accordion.length; i++) {
+        accordion[i].addEventListener('click', function () {
+
+            //  Close all other accordion items
+            for (let j = 0; j < accordion.length; j++) {
+                if (j !== i) {
+                    accordion[j].classList.remove('active');
+                }
+            }
+
+            //  Toggle the clicked one
+            this.classList.toggle('active');
+        });
+    }
+</script>
+    
+</html>
