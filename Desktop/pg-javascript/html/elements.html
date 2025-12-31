@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserting Elements</title>
+    <link rel="stylesheet" href="../css/node.css">
+</head>
+<body>
+     <div class="div">
+        <!-- inserting new elements a button  using JS -->
+        <h3>Pratik Gurung</h3>
+        <p>Im a Front end Developer</p>
+        <p>Hobbies</p>
+        <ul>
+            <li>Travel</li>
+            <li>Sports</li>
+            <li>Dance</li>
+        </ul>
+    </div>
+    <script>
+        let newBtn = document.createElement("button");
+        newBtn.innerText = "Contact Me";
+        console.log(newBtn);
+        let div = document.querySelector("div");
+        div.append(newBtn); 
+        // to add element at the end of div ;
+        // div.prepend(newBtn); 
+        //to add the element at the start of div ;
+        // div.before(newBtn);
+        // to add the element just before the starting of div ;
+        // div.after(newBtn);
+        // to add the element just after the ending of div ;
+    </script>
+</body>
+</html>
