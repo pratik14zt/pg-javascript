@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Handling</title>
+     <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <button id="btn1">Click Me!</button>
+    <P>Example of Event Handling</P>
+    <div class="box">Container Box</div>
+    <script>
+        let btn1 = document.querySelector("#btn1");
+
+        btn1.onclick = () => {
+            console.log ("btn1 was clicked");
+            let a = 25 ; 
+            a++ ; 
+            console.log(a); //26
+        };
+
+        let div = document.querySelector("box");
+        div.onmouseover = () => {
+            console.log("you re inside container");
+        }
+    </script>
+</body>
+</html>

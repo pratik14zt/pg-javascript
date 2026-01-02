@@ -1,0 +1,76 @@
+body{
+ font-family: 'Inter', sans-serif;
+
+}
+    
+
+
+.heading{
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Inter', sans-serif;
+    color: #f2f2f2;
+    font-weight: lighter;
+}
+.heading:hover{
+    color: blue;
+}
+
+/* Title */
+.accordion-title{
+    font-size: 40px;
+    font-weight:lighter:
+    cursor: pointer;
+    padding: 10px;
+    background-color: #000000;
+    border-bottom: 1px solid #ccc;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #f2f2f2;
+    font-family: 'Inter', sans-serif;
+}
+.accordion-title:hover{
+    color: blue;
+}
+
+/* Content animation */
+.accordion-content{
+    max-height: 0;
+    padding: 0 10px; /* Start with no vertical padding */
+    border-bottom: 1px solid #ccc;
+    background-color: #000000;
+    color: #f2f2f2;
+    overflow: hidden;
+    transition: max-height .3s ease;
+     font-family: 'Inter', sans-serif;
+}
+
+/* BAD selector fixed — this line had a wrong structure */
+.accordion .accordion-item{
+    background-color: #000;
+}
+
+/* Active content */
+.accordion-item.active .accordion-content{
+    padding: 10px;
+}
+
+/* Arrow button */
+.btn-arrow{
+    padding: 10px;
+    border-radius: 50%;
+    border: 1px solid #f2f2f2;
+    background-color: #000000;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.btn-arrow:hover{
+    background-color:blue;
+}
+
+/* Arrow icon */
+.arrow{
+    width: 15px;
+    height: 15px;
+    transition: transform 0.3s ease;
+}
