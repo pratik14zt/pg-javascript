@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+  <h1>Advance Topic</h1>  
+  <p>Objects</p>
+  <script>
+    const employee = {
+        fullName : "Pratik Gurung",
+        position : "FE Intern",
+        expYears : 1,
+        skills : function () {
+            console.log("Tailwind and JS");
+        }
+    };
+
+
+    const old = {
+       exp: function () {
+            console.log ("employee.expYears");
+        }
+    };
+
+    const newEmp = {
+        fullName : "Rabin Khulimuli",
+        position : "React Dev",
+        expYears : 2, 
+    };
+
+    newEmp.__proto__ = old;
+  </script>
+</body>
+</html>

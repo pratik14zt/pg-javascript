@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance in JS</title>
+</head>
+<body>
+    <h1>Learning Inheritance in JS</h1>
+    <p>It means passing down the properties and methods of Parent class to Child class</p>
+    <script>
+        class employee {
+           constructor(){
+            this.graduate = "IT Graduates";
+           }
+
+            arrive(){
+                console.log("arrive at 11");
+            }
+
+            leave() {
+                console.log("leave at 6:30");
+            }
+        }
+
+        class newEmployee extends employee {
+            constructor(branch){
+                super(); // to invoke parent class constructor
+                this.branch = branch;
+            }
+            meeting(){
+                console.log("arrive at 10:30 for meeting");
+            }
+        }
+
+        let rabin = new newEmployee("React Dev");
+    </script>
+</body>
+</html>
