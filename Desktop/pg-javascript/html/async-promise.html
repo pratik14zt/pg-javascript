@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Promise in JS </title>
+</head>
+<body>
+    <P>Example of how async fun and promises works 
+    </P>
+</body>
+<script>
+    function asyncFunc() {
+        return new Promise ((resolve,reject) => {
+            setTimeout(() => {
+                console.log("data1");
+                resolve("success")
+            },4000);
+        });
+    }
+
+    console.log("fetching data1.....");
+    let p1 = asyncFunc();
+    p1.then((res) => {
+        console.log(res);
+    });
+</script>
+</html>
