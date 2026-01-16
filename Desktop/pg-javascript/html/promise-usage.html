@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Promises</title>
+</head>
+<body>
+    <p>Usage in promise in API</p>
+    <script>
+        function getData(dataID, getNextData) {
+            return new Promise ((resolve, reject) => {
+                 setTimeout(() => {
+                    console.log("data", dataId );
+                    resolve("success");
+                    if (getNextData) {
+                        getNextData();
+                    }
+                 },5000);
+            });
+          
+        }
+
+        let finalVal = getData(123); 
+    </script>
+</body>
+</html>
