@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async-Await in JS </title>
+</head>
+<body>
+    <p style="font-size: large;">How async and await is used in JS</p>
+</body>
+<script>
+    function api( ) {
+        return new Promise ((resolve,reject) => {
+            setTimeout(() => {
+                console.log("weather data");
+                resolve(200);
+            },2000);
+        });
+    }
+
+
+  async function getWeatherData() {
+    await api();
+    await api();
+
+  }
+
+</script>
+</html>
