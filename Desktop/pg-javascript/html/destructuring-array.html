@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring Array</title>
+</head>
+<body>
+    <h1>Destructuring Array</h1>
+    <script>
+        const colors = ["red" , "blue" , "white" , "yellow" , "black"];
+        const [firstColor, secondColor , thirdColor , ...extraColors] = colors ;
+        console.log(firstColor);
+        console.log(secondColor);
+        console.log(thirdColor);
+        console.log(extraColors);
+
+    </script>
+</body>
+</html>
