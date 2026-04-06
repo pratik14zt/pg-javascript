@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Oriented Programming</title>
+</head>
+<body>
+    <h1>Learning object oriented programming</h1>
+    <script>
+            class Cart {
+            constructor() {
+                this.items = [];
+            }
+
+            addItem(product) {
+                this.items.push(product);
+            }
+
+            getTotal() {
+                return this.items.reduce((total, item) => total + item.price, 0);
+            }
+            }
+
+            const cart = new Cart();
+
+            cart.addItem({ name: "Shoes", price: 2000 });
+            cart.addItem({ name: "Shirt", price: 1500 });
+
+            console.log(cart.getTotal()); // 3500
+    </script>
+</body>
+</html>
